@@ -1,0 +1,33 @@
+body {
+  background-image: url("./nerdWP.jpeg");
+}
+
+.button:hover {
+  font-size: 30px;
+  font-weight: bold;
+  background-image: url(./giphy.gif);
+}
+
+.button {
+  background-color: black;
+  color: white;
+  height: 30vh;
+  width: 50vh;
+  text-align: center;
+  font-style: bold;
+  border-radius: 30px;
+}
+
+.centerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.title {
+  text-align: center;
+  margin-top: 4vh;
+  font-size: 90px;
+  color: aliceblue;
+}

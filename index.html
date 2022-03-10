@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <h1 class="title">GUESS THE NUMBER</h1>
+
+    <div class="centerButton">
+      <button class="button">WANNA PLAY THE GAME?</button>
+    </div>
+
+    <script>
+      // GUESS THE NUMBER GAME
+      //-------------------------------------
+
+      const startGame = document.querySelector(".button");
+      startGame.addEventListener("click", playNumber);
+
+      function playNumber() {
+        const playerName = prompt("What is your name dude?");
+        const randomNbr = Math.floor(Math.random() * 100) + 1;
+
+        //Affichage du nombre random pour test fonction
+        window.alert(`here is the random secret nbr: ${randomNbr}`);
+
+        //ParseInt pour transformer le string en nombre
+        let playerNbr = parseInt(prompt("Enter a number between 1 and 100"));
+
+        // Création de la boucle tant que le nombre du joueur saisi n'est pas égal au nombre random
+        while (playerNbr !== randomNbr) {
+          if (playerNbr > randomNbr) {
+            playerNbr = parseInt(prompt(`Too high, now enter a number between 0 and ${playerNbr}!`));
+          } else if (playerNbr < randomNbr) {
+            playerNbr = parseInt(prompt(`Too low, now enter a number between ${playerNbr} and 100!`));
+          }
+        }
+        //Attention a bien sortir de la boucle while pour afficher la WIN
+        alert(`GG you won the game ${playerName}`);
+
+        //Tentative de modification de l'arrière plan/image du body lors de la WIN
+        const newBG = document.querySelector("body");
+        newBG.style.backgroundImage = "url(./winner.gif)";
+      }
+    </script>
+  </body>
+</html>
